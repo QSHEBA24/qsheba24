@@ -6,19 +6,50 @@
   <meta name="description" content="QSHEBA24 — User-generated content & video advertising. We create UGC campaigns, video production and data-driven strategy to amplify your brand." />
   <meta name="theme-color" content="#111111">
 
+  <!-- PWA -->
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="QSHEBA24 — UGC & Video Advertising" />
   <meta property="og:description" content="Authentic UGC and high-quality video ads that connect with audiences worldwide." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://via.placeholder.com/1200x630" />
+  <meta property="og:image" content="/social-preview.svg" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="canonical" href="https://qsheba24.github.io/qsheba24/">
+
+  <!-- Preconnect to improve font loading -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <title>QSHEBA24 — UGC & Video Advertising</title>
 
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Minimal critical CSS for fastest paint */
+    html {background:#f9f9f9}
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:10px;top:10px;width:auto;height:auto;padding:8px 12px;background:#111;color:#fff;border-radius:6px}
+  </style>
+
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/analytics.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "QSHEBA24",
+    "url": "https://qsheba24.github.io/qsheba24/",
+    "logo": "/favicon.svg",
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <div class="brand">
@@ -33,12 +64,12 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="main">
+    <section class="hero" aria-label="Hero section showcasing brand value">
       <picture>
-        <source media="(min-width:1200px)" srcset="https://via.placeholder.com/1600x600">
-        <source media="(min-width:768px)" srcset="https://via.placeholder.com/1200x500">
-        <img src="https://via.placeholder.com/800x400" alt="People recording user generated video content" loading="lazy">
+        <source media="(min-width:1200px)" srcset="/social-preview.svg">
+        <source media="(min-width:768px)" srcset="/social-preview.svg">
+        <img src="/social-preview.svg" alt="QSHEBA24 hero — people creating user-generated content" loading="eager">
       </picture>
       <div class="hero-content container">
         <h2>Amplify Your Brand with UGC & Video Ads</h2>
@@ -85,19 +116,16 @@
         </div>
 
         <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST" aria-label="Contact form">
-          <label>
-            <span class="label-text">Name</span>
-            <input type="text" name="name" required>
+          <label for="name"><span class="label-text">Name</span>
+            <input id="name" type="text" name="name" required>
           </label>
 
-          <label>
-            <span class="label-text">Email</span>
-            <input type="email" name="email" required>
+          <label for="email"><span class="label-text">Email</span>
+            <input id="email" type="email" name="email" required>
           </label>
 
-          <label>
-            <span class="label-text">Message</span>
-            <textarea name="message" rows="6" required></textarea>
+          <label for="message"><span class="label-text">Message</span>
+            <textarea id="message" name="message" rows="6" required></textarea>
           </label>
 
           <button type="submit" class="btn">Send Message</button>
@@ -111,5 +139,9 @@
       <p>&copy; 2026 QSHEBA24. All rights reserved.</p>
     </div>
   </footer>
+
+  <noscript>
+    <div style="background:#ffefc6;padding:12px;text-align:center">For the best experience enable JavaScript in your browser.</div>
+  </noscript>
 </body>
 </html>
